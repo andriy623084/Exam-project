@@ -1,0 +1,136 @@
+@color-header-block2: white;
+@oppacity-block4-text: 0.6;
+@background-color-block3: #224e73;
+@border-bottom: 4px solid orange;
+
+
+//botstrap correction:
+.backgroundcolor-header{
+  background-color: @background-color-block3;
+}
+.color-nav{
+  color: @color-header-block2;
+}
+.for-block2{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 64px;
+}
+.for-block2__h2{
+  opacity: @oppacity-block4-text;
+  text-transform: capitalize;
+  padding: 18px 10px 28px 18px;
+}
+.for-block2__card{
+  border: none;
+}
+.for-block2__a{
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: @border-bottom;
+  padding-bottom: 40px;
+  font-weight: bold;
+  opacity: @oppacity-block4-text;
+  color: black;
+}
+
+
+.navbar {
+  .center-block-main {
+    .Logo-Header {
+      margin: 0 0 0 40px;
+      img, p {
+        float: left;
+      }
+      p {
+        margin: 27px 0 0 8px;
+        color: @color-header-block2;
+        opacity: 0.7;
+      }
+    }
+    .header-main {
+      padding: 12px 0 0 160px;
+      opacity: 0.7;
+      .menu {
+        margin-left: 300px;
+      }
+      nav ul li {
+        float: left;
+        list-style: none;
+        a {
+          color: @color-header-block2;
+          text-decoration: none;
+          padding-left: 40px;
+        }
+      }
+    }
+  }
+}
+
+.block3{
+  display: inline-flex;
+  aside{
+    background-color: @background-color-block3;
+    padding: 67px 45px 63px 52px;
+    h2, a{
+      color: @color-header-block2;
+      opacity: 0.7;
+    }
+    p{
+      text-transform: capitalize;
+      padding-bottom: 30px;
+      color: @color-header-block2;
+      font-weight: bold;
+      opacity: 0.8;
+    }
+    h2{
+      padding-bottom: 30px;
+      font-size: 30px;
+    }
+    a{
+      text-decoration: none;
+      border-bottom: @border-bottom;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+.block2{
+  padding: 63px 40px 55px 40px;
+  .Title-block4-line{
+    font-weight: bold;
+    opacity: @oppacity-block4-text;
+    padding: 0 0 22px 30px;
+    span{
+      padding-right: 5px;
+    }
+  }
+  .for-block2{
+    .card{
+      .card-body{
+        a{
+          text-transform: uppercase;
+          text-decoration: none;
+          border-bottom: @border-bottom;
+          padding-bottom: 10px;
+          font-weight: bold;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.main-button-blue{
+  background-color: #224e73;
+  border: none;
+  margin: 0 0 58px 577px;
+  padding: 20px 89px;
+  text-transform: uppercase;
+  &:hover{
+    background-color: #133b5d;
+  }
+  &:visited{
+    border: none;
+  }
+}

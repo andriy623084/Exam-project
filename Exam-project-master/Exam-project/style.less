@@ -5,9 +5,7 @@
 @background-color-block5: #f1f3f2;
 @hover-button: #133b5d;
 
-.normal-widht{
-  width: 1100px;
-}
+
 //botstrap correction:
 .backgroundcolor-header{
   background-color: @background-color-block3;
@@ -68,6 +66,9 @@
             color: orange;
           }
         }
+      }
+      @media screen and (max-width: 1057px){
+        padding: 12px 0 0 0;
       }
     }
   }
@@ -216,7 +217,7 @@
 .block7-container{
   display: flex;
   justify-content: space-around;
-  margin: 0 0 50px 220px;
+  margin: 0 0 50px 0;
   &__button{
     img{
       width: 350px;
@@ -233,6 +234,13 @@
       font-weight: bold;
       color: @color-header-block2;
     }
+    @media screen and (max-width: 1083px){
+      margin: 10px 10px 0 0 ;
+    }
+  }
+  @media screen and (max-width: 1083px){
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 .footer-container{

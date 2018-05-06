@@ -1,0 +1,150 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;                               /* обнуляем отступы и убираем бордюры */
+  vertical-align: baseline;          /* приводим все к одной базовой линии */
+  background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+  font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+
+@color-header-block2: white;
+@oppacity-block4-text: 0.6;
+@background-color-block3: #224e73;
+@border-bottom: 4px solid orange;
+
+//slider below
+.slideshow-container {
+  position: relative;
+  //max-width: 1170px;
+  .center-block-main {
+    position: absolute;
+    .Logo-Header{
+      margin: 35px 0 0 40px;
+      img,p{
+        float: left;
+      }
+      p{
+        margin: 27px 0 0 8px;
+        color:@color-header-block2;
+      }
+    }
+    .header-main{
+      padding: 28px 0 0 140px;
+      .menu{
+        margin-left: 300px;
+      }
+      nav ul li {
+        float: left;
+        list-style: none;
+        a{
+          color: @color-header-block2;
+          text-decoration: none;
+          padding-left: 40px;
+        }
+      }
+    }
+  }
+  .prev, .next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #a0aeb9;
+    opacity: 0.4;
+    height: 84px;
+    width: 34px;
+    color: white;
+    border-radius: 0 3px 3px 0;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .prev{
+    margin-top: -400px;
+  }
+  .next{
+    margin-top: -400px;
+    margin-left: 1230px;
+  }
+  .Learn-more {
+    position: absolute;
+    margin: -100px 0 0 50px;
+    border-bottom: @border-bottom;
+    padding-bottom: 4px;
+    opacity: 0.7;
+    p a{
+      color: @color-header-block2;
+      text-decoration: none;
+    }
+  }
+}
+//block 3
+.block3{
+  display: inline-flex;
+  margin-top: -4px;
+  aside{
+    background-color: @background-color-block3;
+    padding: 67px 45px 59px 52px;
+    margin-bottom: 4px;
+    h2, a{
+      color: @color-header-block2;
+      opacity: 0.7;
+    }
+    p{
+      text-transform: capitalize;
+      padding-bottom: 30px;
+      color: @color-header-block2;
+      font-weight: bold;
+      opacity: 0.8;
+    }
+    h2{
+      padding-bottom: 30px;
+      font-size: 30px;
+    }
+    a{
+      text-decoration: none;
+      border-bottom: @border-bottom;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+//block4
+.block4{
+  padding: 63px 40px 55px 40px;
+  .Title-block4-line{
+    font-weight: bold;
+    opacity: @oppacity-block4-text;
+    padding: 0 0 22px 30px;
+    span{
+      padding-right: 5px;
+    }
+  }
+  .inline-blocks4{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 64px;
+
+    article h2{
+      opacity: @oppacity-block4-text;
+      text-transform: capitalize;
+      padding: 18px 10px 28px 18px;
+    }
+    article a{
+      //padding-left: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: @border-bottom;
+      padding-bottom: 4px;
+      font-weight: bold;
+      opacity: @oppacity-block4-text;
+      color: black;
+    }
+  }
+  .main-button-blue{
+    margin-left: 425px;
+    padding: 25px 95px;
+    color: @color-header-block2;
+    background-color: @background-color-block3;
+  }
+}

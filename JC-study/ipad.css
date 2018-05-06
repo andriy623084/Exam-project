@@ -1,0 +1,196 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+em,
+img,
+strong,
+sub,
+sup,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  /* обнуляем отступы и убираем бордюры */
+  vertical-align: baseline;
+  /* приводим все к одной базовой линии */
+  background: transparent;
+  /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+  font-size: 100%;
+  /* размер шрифта всем одинаковый */
+}
+.slideshow-container {
+  position: relative;
+}
+.slideshow-container .center-block-main {
+  position: absolute;
+}
+.slideshow-container .center-block-main .Logo-Header {
+  margin: 35px 0 0 40px;
+}
+.slideshow-container .center-block-main .Logo-Header img,
+.slideshow-container .center-block-main .Logo-Header p {
+  float: left;
+}
+.slideshow-container .center-block-main .Logo-Header p {
+  margin: 27px 0 0 8px;
+  color: white;
+}
+.slideshow-container .center-block-main .header-main {
+  padding: 28px 0 0 140px;
+}
+.slideshow-container .center-block-main .header-main .menu {
+  margin-left: 300px;
+}
+.slideshow-container .center-block-main .header-main nav ul li {
+  float: left;
+  list-style: none;
+}
+.slideshow-container .center-block-main .header-main nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding-left: 40px;
+}
+.slideshow-container .prev,
+.slideshow-container .next {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #a0aeb9;
+  opacity: 0.4;
+  height: 84px;
+  width: 34px;
+  color: white;
+  border-radius: 0 3px 3px 0;
+}
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+  cursor: pointer;
+}
+.slideshow-container .prev {
+  margin-top: -400px;
+}
+.slideshow-container .next {
+  margin-top: -400px;
+  margin-left: 1230px;
+}
+.slideshow-container .Learn-more {
+  position: absolute;
+  margin: -100px 0 0 50px;
+  border-bottom: 4px solid orange;
+  padding-bottom: 4px;
+  opacity: 0.7;
+}
+.slideshow-container .Learn-more p a {
+  color: white;
+  text-decoration: none;
+}
+.block3 {
+  display: inline-flex;
+  margin-top: -4px;
+}
+.block3 aside {
+  background-color: #224e73;
+  padding: 67px 45px 59px 52px;
+  margin-bottom: 4px;
+}
+.block3 aside h2,
+.block3 aside a {
+  color: white;
+  opacity: 0.7;
+}
+.block3 aside p {
+  text-transform: capitalize;
+  padding-bottom: 30px;
+  color: white;
+  font-weight: bold;
+  opacity: 0.8;
+}
+.block3 aside h2 {
+  padding-bottom: 30px;
+  font-size: 30px;
+}
+.block3 aside a {
+  text-decoration: none;
+  border-bottom: 4px solid orange;
+  padding-bottom: 4px;
+}
+.block4 {
+  padding: 63px 40px 55px 40px;
+}
+.block4 .Title-block4-line {
+  font-weight: bold;
+  opacity: 0.6;
+  padding: 0 0 22px 30px;
+}
+.block4 .Title-block4-line span {
+  padding-right: 5px;
+}
+.block4 .inline-blocks4 {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 64px;
+}
+.block4 .inline-blocks4 article h2 {
+  opacity: 0.6;
+  text-transform: capitalize;
+  padding: 18px 10px 28px 18px;
+}
+.block4 .inline-blocks4 article a {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 4px solid orange;
+  padding-bottom: 4px;
+  font-weight: bold;
+  opacity: 0.6;
+  color: black;
+}
+.block4 .main-button-blue {
+  margin-left: 425px;
+  padding: 25px 95px;
+  color: white;
+  background-color: #224e73;
+}

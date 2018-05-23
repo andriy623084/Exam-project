@@ -4,3 +4,7 @@
 .red-dev{
     background-color: red;
 }
+.stripes{
+    border-collapse: collapse;
+    width: 100%;
+}

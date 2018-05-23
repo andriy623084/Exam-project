@@ -122,21 +122,267 @@
 // var out = document.querySelector('#out');
 // console.log(out);
 
-var car = {};
-var allCars = [];
-var cName = document.getElementById('fName');
-var model = document.getElementById('mName');
-var engine = document.getElementById('engine');
+// var car = {};
+// var allCars = [];
+// var cName = document.getElementById('fName');
+// var model = document.getElementById('mName');
+// var engine = document.getElementById('engine');
+//
+// function submitResults() {
+//      car.name = cName.value;
+//      car.model = model.value;
+//      car.engine = engine.value;
+//      console.log(car);
+//      allCars.push(car);
+//      console.log(allCars);
+//      if(allCars.length ===5){
+//          alert("stop!");
+//      }
+// }
+//
 
-function submitResults() {
-     car.name = cName.value;
-     car.model = model.value;
-     car.engine = engine.value;
-     console.log(car);
-     allCars.push(car);
-     console.log(allCars);
-     if(allCars.length ===5){
-         alert("stop!");
-     }
-}
+//
+// var mainWrapper = document.getElementById("main-wrapper");
+// var mapWrapper =  document.getElementById("map-wrapper");
+// var mainPage = document.getElementById('Home');
+// var mainVideo = document.getElementById('video');
+//
+// mainPage.classList.add('active');
+//
+// function showMap(){
+//         if (mainWrapper.style.display === "none") {
+//             mainWrapper.style.display = "block";
+//             mapWrapper.style.display = "none";
+//         } else {
+//             mainWrapper.style.display = "none";
+//             mainPage.classList.remove('active');
+//             mainVideo.classList.add('active');
+//         }
+// }
+
+// let words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door'];
+//
+// let shortWords = words.filter(function(word) {
+//     return word.length < 9;
+// });
+// console.log(shortWords);
+
+// let favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+//
+// let longFavoriteWords = favoriteWords.filter(favoriteWords => favoriteWords.length > 7);
+// console.log(longFavoriteWords);
+//
+// let words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+//
+// // Something is missing in the method call below
+//
+// console.log(words.filter(function (vovk) {
+//     return word.length < 9;
+// }));
+
+// let day = "Tuesday";
+// let alarm = '';
+// let person = {
+//     name: 'Andriy',
+//     age: 23,
+//     weekendAlarm: 'No alarms needed',
+//     weekAlarm: 'Alarm set to 7AM'
+// };
+// console.log(person['name']);
+// console.log(person['age']);
+// if(day === "Saturday" || day === "Sunday"){
+//     alert(person['weekendAlarm'])
+// }else{
+//     alert(person['weekAlarm']);
+// }
+
+// let person = {
+//     name: 'Tyron',
+//     age: 40,
+//     weekendAlarm: 'No alarms needed',
+//     weekAlarm: 'Alarm set to 7AM',
+//
+//     sayHello: function() {
+//         return `Hello, my name is ${this.name}`;
+//     },
+//
+//     sayGoodbye() {
+//         return 'Goodbye!';
+//     }
+//
+// };
+//
+// let friend = {name: 'Bohdan'}
+// friend.sayHello = person.sayHello;
+// console.log(person.sayHello());
+//
+// person.hobbies = ['Basketball', 'Coaching'];
+// person.hobbies = ['Basketball'];
+// console.log(person.hobbies);
+//
+//
+// console.log(person['name']);
+// console.log(person['age']);
+//
+// let day = 'Tuesday';
+// let alarm;
+//
+// if (day === 'Saturday' || day === 'Sunday' ) {
+//     alarm = 'weekendAlarm';
+// } else {
+//     alarm = 'weekAlarm';
+// }
+//
+// console.log(person[alarm]);
+// console.log(friend.sayHello())
+// console.log(typeof friend['sayHello']);
+
+
+// let person = {
+//     _name: 'Lu Xun',
+//     _age: 137,
+//     set age(newAge){
+//         if(typeof age === number){
+//             console.log('yes, correct')
+//         }else {
+//             console.log('Invalid input');
+//         }
+//     }
+// };
+
+// let person = {
+//     _name: 'Lu Xun',
+//     _age: 137,
+//
+//     set age(ageIn) {
+//         if (typeof ageIn === 'number') {
+//             this._age = ageIn;
+//         }
+//         else {
+//             console.log('Invalid input');
+//             return 'Invalid input';
+//         }
+//     },
+// get age() {return '${this.name} is ${this.age} years old.'}
+// };
+
+
+//
+// // person.age = 'Thirty-nine';
+// person.age = 39;
+// console.log(person.age);
+
+// class Dog {
+//     constructor(name) {
+//         this.name = name;
+//         this.behavior = 0;
+//     }
+// }
+//
+// const halley = new Dog('Halley'); // Create new Dog instance
+// console.log(halley.name); // Log the name value saved to halle
+// console.log(Dog.name);
+
+// class Surgeon {
+//     constructor(name, department) {
+//         this.name = name;
+//         this.department = department;
+//     }
+// }
+//
+// const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+// const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+
+// class Surgeon {
+//     constructor(name, department) {
+//         this._name = name;
+//         this._department = department;
+//         this._remainingVacationDays = 20;
+//     }
+//
+//     get name() {
+//         return this._name;
+//     }
+//
+//     get department() {
+//         return this._department;
+//     }
+//
+//     get remainingVacationDays() {
+//         return this._remainingVacationDays;
+//     }
+//
+//     takeVacationDays(daysOff) {
+//         this._remainingVacationDays -= daysOff;
+//     }
+// }
+//
+// const surgeonCurry = new Surgeon('Curry', 'Cardiovascular', 'hom');
+// const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+// console.log(surgeonCurry.name)
+
+// class HospitalEmployee{
+//     constructor (name){
+//         this._name = name;
+//         this._remainingVacationDays = 20;
+//     }
+//     get name(){
+//         return this._name;
+//     }
+//     get remainingVacationDays(){return this._remainingVacationDays;
+//     }
+//     takeVacationDays(daysOff){
+//         return this._remainingVacationDays -= daysOff;
+//     }
+// }
+// const vacation = new HospitalEmployee('Andriy', 24);
+// console.log(vacation.remainingVacationDays);
+
+// class HospitalEmployee {
+//     constructor(name ) {
+//         this._name = name;
+//         this._remainingVacationDays = 20;
+//     }
+//
+//     get name() {
+//         return this._name;
+//     }
+//
+//     get remainingVacationDays() {
+//         return this._remainingVacationDays;
+//     }
+//
+//     takeVacationDays(daysOff) {
+//         this._remainingVacationDays -= daysOff;
+//     }
+// }
+// class Nurse extends HospitalEmployee{
+//     constructor(name , certifications){
+//         super(name);
+//         this._certifications = certifications;
+//     }
+//     get certifications(){
+//         return this._certifications;
+//     }
+//     addCertification(add){
+//         this._certifications += add;
+//     }
+// }
+// const nurseOlynyk = new Nurse('Olynyk' , ['Trauma', 'Pediatrics']);
+// console.log(nurseOlynyk.certifications)
+
+//javascript kiev task 7
+// for(let b = 7; b<63;b+=7){
+//     console.log(b);
+// }
+//
+
+// function one(a){
+//     console.log(a)
+// }
+// one(2,3,4);
+// function makeColor() {
+//     var colorB = document.getElementsByTagName('p');
+// }
+// makeColor();
 

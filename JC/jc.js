@@ -403,3 +403,264 @@
 //         h = (2/c)*Math.sqrt()
 //     }
 // }
+
+
+// javascriptkiev.com - events - task 7-8-9 - done, 1 question below
+// var myTable = document.getElementById('my-table');
+// var count = 0;
+// myTable.onclick = function addBorder() {
+//     count +=1;
+//     myTable.style.border = "thick solid #0000FF";
+//     if (count === 2){
+//         myTable.style.border = "0px";
+//         myTable.classList.add('stripes');
+//     }else if(count ===3){
+//         myTable.classList.remove('stripes');
+//         myTable.style.border = "10px solid red";
+//     }
+// };
+// function addBorderByCheckbox(){
+//     myTable.style.border = "thick solid #0000FF";
+// }
+// function removeBorderAddStriped(){
+//     myTable.style.border = "0px";
+//     myTable.classList.add('stripes');
+// }
+// // document.getElementById('stripped-of-highlight-on').onclick = 'if(this.checked){removeBorderAddStriped()}'; - why I can`t to hang a function from js?
+// function removeStripedAddHighlight(){
+//     myTable.classList.remove('stripes');
+//     myTable.style.border = "10px solid red";
+// }
+
+// javascriptkiev.com - events - task 10 - done
+// var buttonWithTextIner = document.getElementById('button-with-text');
+// function getTextFromButton () {
+//     alert(buttonWithTextIner.innerText)
+// }
+// function closeThePopUp (){
+//     buttonWithTextIner.setAttribute("disabled", "disabled");
+// }
+
+
+// javascriptkiev.com - events - task 11 - done
+//to make it work add: onclick="getTypeOfDoc(event)" to body tag
+// function getTypeOfDoc(event) {
+//     alert(event.target.nodeName);
+// }
+
+
+// javascriptkiev.com - events - task 12 - need to ask teacher !!!
+// var firstDiv = document.getElementById('first');
+// var secondDiv = document.getElementById('second')
+// function outListener(event) {
+//     console.log("exited " + event.target.first + " for " + event.relatedTarget.second);
+// }
+
+
+// javascriptkiev.com - events - task 13 - done
+// var getButton = document.getElementById('only-one button');
+// getButton.addEventListener('mousedown', function(){
+//     alert("you pressed the button:" + event.which);
+// });
+
+
+// javascriptkiev.com - events - task 13 - done by html.events
+// var getButton = document.getElementById('only-one button');
+// function getResultFromClick(event){
+//     alert("you pressed the button:" + event.which)
+// }
+
+
+// javascriptkiev.com - events - task 14 - done  - how to make code shorter?
+// var Myimage = document.getElementById('one-image');
+// var count = 0;
+// Myimage.onclick = function ChangeSize () {
+//     count++;
+//     Myimage.style.height = '300px';
+//     Myimage.style.width = '350px';
+//     if(count === 2){
+//         Myimage.style.opacity = '0.9'
+//     }else if(count===3){
+//         Myimage.style.opacity = '0.8'
+//     }else if(count===4){
+//         Myimage.style.opacity = '0.7'
+//     }else if(count===5){
+//         Myimage.style.opacity = '0.6'
+//     }
+// };
+
+
+// javascriptkiev.com - events - task 15 - done
+// var Myimage = document.getElementById('one-image');
+// var count = 0;
+// Myimage.onmouseover = function ChangeSize () {
+//     count++;
+//     Myimage.style.height = '300px';
+//     Myimage.style.width = '350px';
+//     if(count === 2){
+//         Myimage.style.opacity = '0.9'
+//     }else if(count===3){
+//         Myimage.style.opacity = '0.8'
+//     }else if(count===4){
+//         Myimage.style.opacity = '0.7'
+//     }else if(count===5){
+//         Myimage.style.opacity = '0.6'
+//     }
+// };
+
+
+// avascriptkiev.com - events - task 16 - need to ask the teacher !
+// var Myimage = document.getElementById('one-image');
+//
+// Myimage.onmouseover = function ChangePic(){
+//      Myimage.src="images/block4Photo2.jpg";
+// };
+//
+// Myimage.onmouseout = function getBackFirstPic() {
+//     Myimage.src='images/block6-shoes.jpg'
+// };
+
+
+// avascriptkiev.com - events - task 17 - need to ask teacher , as problem the same as in task 16
+// var Myimage = document.getElementById('one-image');
+//
+// Myimage.onmouseover = function changeSize(){
+//      Myimage.style.height = '400px';
+//      Myimage.style.width = '700px'
+// };
+// Myimage.onmouseout = function getSizeBack() {
+//     Myimage.style.height = '600px';
+//     Myimage.style.width = '1000px';
+// };
+
+
+// avascriptkiev.com - events - task 17 - done not in nice way
+// var Myimage = document.getElementById('one-image');
+// var myDiv = document.getElementById('back-div');
+// Myimage.onclick = function () {
+//     Myimage.style.width = '70%';
+//     Myimage.style.height = '400px';
+//     Myimage.style.position = 'absolute';
+//     Myimage.style.paddingLeft = '17%';
+//     myDiv.style.backgroundColor = 'black';
+//     Myimage.style.display = "block";
+//     myDiv.style.position = 'relative';
+// };
+
+
+
+// school 21.05.2018
+// getMinFromNumbers(4,3,12,8);
+//
+// function getMinFromNumbers(a,b,c,d) {
+//     var arr1 = [a,b];
+//     var arr2 = [c,d];
+//     var min1 = min(arr1);
+//     var min2 = min(arr2);
+//     var max1min = max(min1,min2);
+//     console.log(max1min)
+// }
+// function max(arr) {
+//     for(var i=0,i<a){
+//         if(arr[i]>arr[i+1])
+//             return arr[i]
+//     }
+// }
+// function min(arr) {
+//     for(var i in arr){
+//         if(arr[i]<arr[i+1])
+//             return arr[i]
+//     }
+// }
+
+// school 21.05.2018 - done
+// class CountSQ{
+//     constructor(a,b){
+//         this.a=a;
+//         this.b=b;
+//     }
+//     getArea(){
+//         alert(this.a*this.b)
+//     }
+// }
+// var react = new CountSQ(4,6);
+// react.getArea();
+
+
+//STRING
+// avascriptkiev.com - string - task 1 - done
+// function countLteral() {
+//     var myInput = document.getElementById('field').value;
+//     alert(myInput.length)
+// }
+// document.getElementById('my-p').onclick = countLteral;
+
+
+// avascriptkiev.com - string - task 2 - done
+// var arrayofPics = [
+//     {name:'firstimage', image: 'images/block7-forest.jpeg'},
+//     {name:'secondimage', image: 'images/block4Photo3.jpg'}
+// ];
+// for(var i = 0; i < arrayofPics.length; i++){
+//     var displayImage = arrayofPics[1];
+//     document.getElementById('my-p').innerHTML = displayImage.name + '<img src="'+displayImage.image+'">';
+//     var displayImage2 = arrayofPics[0];
+//     document.getElementById('my-div').innerHTML = displayImage2.name + '<img src="'+displayImage2.image+'">'
+// }
+
+
+// avascriptkiev.com - string - task 3 - DONE!! best progran ever =)
+// function countLteral() {
+//     var myInput = document.getElementById('field').value;
+//     var checkHttp = myInput.startsWith('http://');
+//     var checkHttps = myInput.startsWith('https://');
+//     // alert("http:"+ checkHttp);
+//     // alert("https:"+ checkHttps);
+//     var divClass = document.getElementById('my-div');
+//     var resultHttp;
+//     if(checkHttp === true){
+//         resultHttp = myInput.slice(7,myInput.length);
+//         divClass.innerHTML = resultHttp;
+//     }else if(checkHttps === true){
+//         resultHttp = myInput.slice(8,myInput.length);
+//         divClass.innerHTML = resultHttp;
+//     }
+// }
+// document.getElementById('my-p').onclick = countLteral;
+
+
+// avascriptkiev.com - string - task 4 - done
+// function searchSite() {
+//     var myInput = document.getElementById('field').value;
+//     var checkHttp = myInput.match(/site.ua/);
+//     var divClass = document.getElementById('my-div');
+//     divClass.innerHTML = checkHttp;
+// }
+// document.getElementById('my-p').onclick = searchSite;
+
+
+// avascriptkiev.com - string - task 5
+// var Arrayuser = [];
+// function submitForm() {
+//     var firstName = document.getElementById("first-name").value;
+//     var lastName = document.getElementById("last-name").value;
+//     var email = document.getElementById("email").value;
+//     var password = document.getElementById("password").value;
+//     if (firstName === '' || email === '' || lastName === '') {
+//         alert("Please fill all fields...!!!!!!");
+//     }else if (password.length < 5){
+//         alert('Password has to be with minimum 5 characters')
+//     }else {
+//         // Arrayuser.push(firstName,lastName,email,password);
+//         // console.log(Arrayuser);
+//         var objectOfUser = {firstname1: firstName,lastname1: lastName,email1: email,password1: password};
+//         Arrayuser.push(objectOfUser);
+//         alert(objectOfUser.lastname1);
+//         alert(Arrayuser);
+//         console.log(objectOfUser);
+//         console.log(Arrayuser);
+//        alert('user first name is:'+ objectOfUser.firstname1 +' '+ 'user last name:' + objectOfUser.lastname1 +" "+'user email:' + objectOfUser.email1 +" "+ 'user password:' + objectOfUser.password1);
+//         // document.getElementById('my-p').innerHTML = Arrayuser;
+//     }
+// }
+

@@ -663,4 +663,15 @@
 //         // document.getElementById('my-p').innerHTML = Arrayuser;
 //     }
 // }
+require("jsdom").env("", function(err, window) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    var $ = require("jquery")(window);
+});
+
+var m = $('my-p');
+console.log(m);
 

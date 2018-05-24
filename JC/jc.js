@@ -663,15 +663,27 @@
 //         // document.getElementById('my-p').innerHTML = Arrayuser;
 //     }
 // }
-require("jsdom").env("", function(err, window) {
-    if (err) {
-        console.error(err);
-        return;
-    }
 
-    var $ = require("jquery")(window);
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({
+            url: 'https://api.openaq.org/v1/countries',
+            success: function(result){
+                var countries = result.results;
+                viewData(countries);
+            }
+        });
+    });
+    function  viewData(countries) {
+        for(var i = 0; i<countries.length; i++){
+            $("#div1").append('<div class="parent"><div class="container">'+countries[i].name+"</div>"+
+                " <div>"+countries[i].code+"</div>"+
+                " <div>"+countries[i].count+"</div>"+
+                " <div>"+countries[i].cities+"</div>"+
+                " <div>"+countries[i].locations+"</div></div>");
+        }
+    }
 });
 
-var m = $('my-p');
-console.log(m);
 

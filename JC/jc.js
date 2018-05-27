@@ -665,25 +665,147 @@
 // }
 
 
-$(document).ready(function(){
-    $("button").click(function(){
-        $.ajax({
-            url: 'https://api.openaq.org/v1/countries',
-            success: function(result){
-                var countries = result.results;
-                viewData(countries);
-            }
-        });
-    });
-    function  viewData(countries) {
-        for(var i = 0; i<countries.length; i++){
-            $("#div1").append('<div class="parent"><div class="container">'+countries[i].name+"</div>"+
-                " <div>"+countries[i].code+"</div>"+
-                " <div>"+countries[i].count+"</div>"+
-                " <div>"+countries[i].cities+"</div>"+
-                " <div>"+countries[i].locations+"</div></div>");
-        }
+// AJAX REQUEST !!! - school
+// $(document).ready(function(){
+//     $("button").click(function(){
+//         $.ajax({
+//             url: 'https://api.openaq.org/v1/countries',
+//             success: function(result){
+//                 var countries = result.results;
+//                 viewData(countries);
+//             }
+//         });
+//     });
+//     function  viewData(countries) {
+//         for(var i = 0; i<countries.length; i++){
+//             $("#div1").append('<div class="parent"><div class="container">'+countries[i].name+"</div>"+
+//                 " <div>"+countries[i].code+"</div>"+
+//                 " <div>"+countries[i].count+"</div>"+
+//                 " <div>"+countries[i].cities+"</div>"+
+//                 " <div>"+countries[i].locations+"</div></div>");
+//         }
+//     }
+// });
+
+
+// example1 - youtube - not done, can`t access the key in array;
+// function getScores() {
+// var xmlhttp = new XMLHttpRequest();
+// xmlhttp.onreadystatechange = function() {
+//     if(xmlhttp.readyState === 4 && xmlhttp.status ===200){
+//         document.getElementById('div1').innerHTML = xmlhttp.responseText;
+//         var cities = xmlhttp.result;
+//         getI(cities);
+//     }else{
+//         document.getElementById('div1').innerHTML = 'waiting for response from server';
+//     }
+//   };
+//     function getI (cities) {
+//      for(var i=0;i<cities.length;i++){
+//          $('#div2').append('<div class ="parent">'+cities[i].city+"</div>");
+//      }
+//  }
+// xmlhttp.open("GET","https://learnwebcode.github.io/json-example/animals-1.json",true );
+// xmlhttp.send();
+// }
+
+
+// AJAX REQUEST !!! - youtube - done
+// var countAClicks = 1;
+// var myDiv = document.getElementById('div1');
+// var myButtonToClcik = document.getElementById('button');
+// myButtonToClcik.addEventListener('click', function () {
+//     var makeXmlRequest = new XMLHttpRequest();
+//     makeXmlRequest.open('GET',"https://learnwebcode.github.io/json-example/animals-"+ countAClicks+".json");
+//     makeXmlRequest.onload = function () {
+//         var collectedDataFromAjaxRequest = JSON.parse(makeXmlRequest.responseText);
+//         renderHTML(collectedDataFromAjaxRequest);
+//     };
+//     makeXmlRequest.send();
+//     countAClicks++;
+//     if(countAClicks===4){
+//         myButtonToClcik.style.visibility = 'hidden';
+//     }
+// });
+// function renderHTML(data) {
+//     var htmlString = ' ';
+//     for(var i=0;i<data.length;i++){
+//         htmlString+="<p>"+data[i].name+" is a"+" "+data[i].species+" "+"that likes to eat ";
+//
+//         for(var ii = 0;ii<data[i].foods.likes.length;ii++){
+//             if(ii===0){
+//                 htmlString+=data[i].foods.likes[ii];
+//             }else {
+//                 htmlString+=' and'+" "+data[i].foods.likes[ii];
+//             }
+//         }
+//         htmlString += ' while dislikes ';
+//
+//         for(ii = 0;ii<data[i].foods.dislikes.length;ii++){
+//             if(ii===0){
+//                 htmlString+=data[i].foods.dislikes[ii];
+//             }else {
+//                 htmlString+=' and '+" "+data[i].foods.dislikes[ii];
+//             }
+//         }
+//         htmlString+='</p>'
+//     }
+//     myDiv.insertAdjacentHTML('beforeend',htmlString);
+// }
+
+
+// Contac Forma ! - done by saving into local storage and showing to HTML
+// function setData() {
+//     var firstName = document.getElementById('name').value;
+//     var lastName = document.getElementById('last-name').value;
+//     var userEmail = document.getElementById('email').value;
+//
+//     var User = {
+//         Username: firstName, Lastname: lastName, UserEmail: userEmail
+//     };
+//     var localData = JSON.stringify(User);
+//     localStorage.setItem("userdata", localData);
+// }
+//     function getData() {
+//         var emptyStringToShowUserInfo = '';
+//         var UserInforShow = document.getElementById('div2');
+//         var data = localStorage.getItem('userdata');
+//         var collectDataFromLocalStorage = JSON.parse(data);
+//         emptyStringToShowUserInfo = collectDataFromLocalStorage.Username +'<br>'+ collectDataFromLocalStorage.Lastname +'<br>'+ collectDataFromLocalStorage.UserEmail;
+//         UserInforShow.innerHTML = emptyStringToShowUserInfo;
+// }
+
+
+// Login and access to website - home task
+function setData() {
+    var firstName = document.getElementById('name').value;
+    var lastName = document.getElementById('last-name').value;
+    var userEmail = document.getElementById('email').value;
+    var Userpassword = document.getElementById('password').value;
+
+    var User = {
+        Username: firstName, Lastname: lastName, UserEmail: userEmail, UserPassword: Userpassword
+    };
+    
+    var localData = JSON.stringify(User);
+    localStorage.setItem("userdata", localData);
+}
+function getData() {
+    var emptyStringToShowUserInfo = '';
+    var UserInforShow = document.getElementById('div2');
+    var data = localStorage.getItem('userdata');
+    var collectDataFromLocalStorage = JSON.parse(data);
+    emptyStringToShowUserInfo = collectDataFromLocalStorage.Username +'<br>'+ collectDataFromLocalStorage.Lastname +'<br>'+ collectDataFromLocalStorage.UserEmail+'<br>'+collectDataFromLocalStorage.UserPassword;
+    UserInforShow.innerHTML = emptyStringToShowUserInfo;
+}
+function LoginUser() {
+    var loginUseremail = document.getElementById('Loginemail').value;
+    var loginUserPassword = document.getElementById('Loginpassword').value;
+    var LoginParseData = localStorage.getItem('userdata');
+    var parseJsonOnLoginPage = JSON.parse(LoginParseData);
+    if(loginUseremail === parseJsonOnLoginPage.UserEmail && loginUserPassword === parseJsonOnLoginPage.UserPassword){
+        window.open('UserProfile.html',"_self")
+    }else{
+        alert('Email or password is wrong')
     }
-});
-
-
+}

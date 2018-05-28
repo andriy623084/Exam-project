@@ -782,13 +782,29 @@ function setData() {
     var lastName = document.getElementById('last-name').value;
     var userEmail = document.getElementById('email').value;
     var Userpassword = document.getElementById('password').value;
-
-    var User = {
-        Username: firstName, Lastname: lastName, UserEmail: userEmail, UserPassword: Userpassword
-    };
-    
-    var localData = JSON.stringify(User);
-    localStorage.setItem("userdata", localData);
+    var divUnderPassword = document.getElementById('div2');
+    var divUnderEmail = document.getElementById('error-place-foremail');
+    var re =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    divUnderEmail.style.color = 'red';
+    divUnderPassword.style.color = 'red';
+    if (userEmail.length === 0)
+    {
+        divUnderEmail.innerHTML = 'Email is mandatory field'
+    }else if(!re.test(userEmail)){
+            divUnderEmail.innerHTML = 'Please provide a valid email address';
+            return false;
+    }else {
+        if (Userpassword.length < 6){
+            divUnderPassword.innerHTML = 'length of password has to be minimum 6 symbols';
+        }else{
+            var User = {
+                Username: firstName, Lastname: lastName, UserEmail: userEmail, UserPassword: Userpassword
+            };
+            var localData = JSON.stringify(User);
+            localStorage.setItem("userdata", localData);
+            window.open('loginPage.html',"_self")
+        }
+    }
 }
 function getData() {
     var emptyStringToShowUserInfo = '';
@@ -801,11 +817,13 @@ function getData() {
 function LoginUser() {
     var loginUseremail = document.getElementById('Loginemail').value;
     var loginUserPassword = document.getElementById('Loginpassword').value;
+    var placeForError = document.getElementById('place-for-error-onlogin');
+    placeForError.style.color = 'red';
     var LoginParseData = localStorage.getItem('userdata');
     var parseJsonOnLoginPage = JSON.parse(LoginParseData);
     if(loginUseremail === parseJsonOnLoginPage.UserEmail && loginUserPassword === parseJsonOnLoginPage.UserPassword){
         window.open('UserProfile.html',"_self")
     }else{
-        alert('Email or password is wrong')
+       placeForError.innerHTML = 'Email or password is wrong';
     }
 }

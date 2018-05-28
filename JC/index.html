@@ -143,12 +143,15 @@
 
 <!--Website with Login and veryfication-->
 <p>Register page</p>
+<form id="myform" action="loginPage.html">
 <label>User`s First name</label><input id="name" type="text" placeholder="your name"><br>
 <label>User`s Last name</label><input id="last-name" type="text" placeholder="your last name"><br>
-<label>User`s email</label><input id="email" type="text" placeholder="your email" style="margin-left: 30px"><br>
+<label>User`s email</label><input id="email" type="email" placeholder="your email" style="margin-left: 30px "><br>
+    <div id="error-place-foremail"></div>
 <label>User`s password</label><input id="password" type="text" placeholder="your password"><br>
 <div id="div2"></div>
 <button type="button" id="button" onclick="setData()">Register</button><br>
+</form>
 <label>Already have an account?</label><a href="loginPage.html">Login</a>
 
 

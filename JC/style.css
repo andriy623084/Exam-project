@@ -19,3 +19,9 @@
     margin: 0 auto;
     text-align: center;
 }
+.single-user{
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

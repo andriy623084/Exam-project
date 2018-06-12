@@ -710,7 +710,9 @@
 // }
 
 
-// AJAX REQUEST !!! - youtube - done
+// AJAX REQUEST !!! -
+//
+// youtube - done
 // var countAClicks = 1;
 // var myDiv = document.getElementById('div1');
 // var myButtonToClcik = document.getElementById('button');
@@ -777,53 +779,369 @@
 
 
 // Login and access to website - home task
-function setData() {
-    var firstName = document.getElementById('name').value;
-    var lastName = document.getElementById('last-name').value;
-    var userEmail = document.getElementById('email').value;
-    var Userpassword = document.getElementById('password').value;
-    var divUnderPassword = document.getElementById('div2');
-    var divUnderEmail = document.getElementById('error-place-foremail');
-    var re =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    divUnderEmail.style.color = 'red';
-    divUnderPassword.style.color = 'red';
-    if (userEmail.length === 0)
-    {
-        divUnderEmail.innerHTML = 'Email is mandatory field'
-    }else if(!re.test(userEmail)){
-            divUnderEmail.innerHTML = 'Please provide a valid email address';
-            return false;
-    }else {
-        if (Userpassword.length < 6){
-            divUnderPassword.innerHTML = 'length of password has to be minimum 6 symbols';
-        }else{
-            var User = {
-                Username: firstName, Lastname: lastName, UserEmail: userEmail, UserPassword: Userpassword
-            };
-            var localData = JSON.stringify(User);
-            localStorage.setItem("userdata", localData);
-            window.open('loginPage.html',"_self")
-        }
+// function setData() {
+//     var firstName = document.getElementById('name').value;
+//     var lastName = document.getElementById('last-name').value;
+//     var userEmail = document.getElementById('email').value;
+//     var Userpassword = document.getElementById('password').value;
+//     var divUnderPassword = document.getElementById('div2');
+//     var divUnderEmail = document.getElementById('error-place-foremail');
+//     var re =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//     divUnderEmail.style.color = 'red';
+//     divUnderPassword.style.color = 'red';
+//     if (userEmail.length === 0)
+//     {
+//         divUnderEmail.innerHTML = 'Email is mandatory field'
+//     }else if(!re.test(userEmail)){
+//             divUnderEmail.innerHTML = 'Please provide a valid email address';
+//             return false;
+//     }else {
+//         if (Userpassword.length < 6){
+//             divUnderPassword.innerHTML = 'length of password has to be minimum 6 symbols';
+//         }else{
+//             var User = {
+//                 Username: firstName, Lastname: lastName, UserEmail: userEmail, UserPassword: Userpassword
+//             };
+//             var localData = JSON.stringify(User);
+//             localStorage.setItem("userdata", localData);
+//             window.open('loginPage.html',"_self")
+//         }
+//     }
+// }
+// function getData() {
+//     var emptyStringToShowUserInfo = '';
+//     var UserInforShow = document.getElementById('divUserProfile');
+//     var data = localStorage.getItem('userdata');
+//     var collectDataFromLocalStorage = JSON.parse(data);
+//     emptyStringToShowUserInfo = collectDataFromLocalStorage.Username +'<br>'+ collectDataFromLocalStorage.Lastname +'<br>'+ collectDataFromLocalStorage.UserEmail+'<br>'+collectDataFromLocalStorage.UserPassword;
+//     UserInforShow.innerHTML = emptyStringToShowUserInfo;
+// }
+// function LoginUser() {
+//     var loginUseremail = document.getElementById('Loginemail').value;
+//     var loginUserPassword = document.getElementById('Loginpassword').value;
+//     var placeForError = document.getElementById('place-for-error-onlogin');
+//     placeForError.style.color = 'red';
+//     var LoginParseData = localStorage.getItem('userdata');
+//     var parseJsonOnLoginPage = JSON.parse(LoginParseData);
+//     if(loginUseremail === parseJsonOnLoginPage.UserEmail && loginUserPassword === parseJsonOnLoginPage.UserPassword){
+//         window.open('UserProfile.html',"_self")
+//     }else{
+//        placeForError.innerHTML = 'Email or password is wrong';
+//     }
+// }
+
+
+//same task as above buy using OOP - not working!! - email validation is not working
+//     var firstName = document.getElementById('name').value;
+//     var lastName = document.getElementById('last-name').value;
+//     var userEmail = document.getElementById('email').value;
+//     var Userpassword = document.getElementById('password').value;
+//     var divUnderPassword = document.getElementById('div2');
+//     var divUnderEmail = document.getElementById('error-place-foremail');
+//     var re =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//     divUnderEmail.style.color = 'red';
+//     divUnderPassword.style.color = 'red';
+//     var data = localStorage.getItem('userdata');
+//     var collectDataFromLocalStorage = JSON.parse(data);
+//
+//
+// function setData() {
+//     if (userEmail.length === 0)
+//     {
+//         divUnderEmail.innerHTML = 'Email is mandatory field'
+//     }else if(!re.test(userEmail)){
+//             divUnderEmail.innerHTML = 'Please provide a valid email address';
+//             return false;
+//     }else {
+//         if (Userpassword.length < 6){
+//             divUnderPassword.innerHTML = 'length of password has to be minimum 6 symbols';
+//         }else{
+//             var User = {
+//                 Username: firstName, Lastname: lastName, UserEmail: userEmail, UserPassword: Userpassword
+//             };
+//             var localData = JSON.stringify(User);
+//             localStorage.setItem("userdata", localData);
+//             window.open('loginPage.html',"_self")
+//         }
+//     }
+// }
+// function getData() {
+//     var emptyStringToShowUserInfo = '';
+//     var UserInforShow = document.getElementById('divUserProfile');
+//     emptyStringToShowUserInfo = collectDataFromLocalStorage.Username +'<br>'+ collectDataFromLocalStorage.Lastname +'<br>'+ collectDataFromLocalStorage.UserEmail+'<br>'+collectDataFromLocalStorage.UserPassword;
+//     UserInforShow.innerHTML = emptyStringToShowUserInfo;
+// }
+// function LoginUser() {
+//     var loginUseremail = document.getElementById('Loginemail').value;
+//     var loginUserPassword = document.getElementById('Loginpassword').value;
+//     var placeForError = document.getElementById('place-for-error-onlogin');
+//     placeForError.style.color = 'red';
+//     if(loginUseremail === collectDataFromLocalStorage.UserEmail && loginUserPassword === collectDataFromLocalStorage.UserPassword){
+//         window.open('UserProfile.html',"_self")
+//     }else{
+//        placeForError.innerHTML = 'Email or password is wrong';
+//     }
+// }
+
+
+//PAGINATION - school
+// var xhr = new XMLHttpRequest();
+// var page = 1;
+// xhr.open('GET', 'https://reqres.in/api/users?page='+page,true);
+// xhr.onload = function () {
+//     var response = JSON.parse(xhr.response);
+//     console.log(xhr.response);
+//     var user = response.data;
+//     $('.userContainer').empty();
+//     for (var i = 0; i < response.data.length; i++) {
+//         $('.userContainer').append('<div>' + '<p>' + user[i].id + '</p>' + user[i].first_name + '<p>' + user[i].last_name + '</p>' + '<img src="' + user[i].avatar + '">' + '</div>');
+//     }
+//     if (page === 1) {
+//         $('#previose').hide();
+//     } else {
+//         $('#previose').show();
+//     }
+//     if (page >= response.total_pages) {
+//         $('#next').hide();
+//     } else {
+//         $('#next').show()
+//     }
+// };
+// function withNextPage() {
+//     page++;
+//     nextPage(page)
+// }
+// function previosePage() {
+//     page = page -1;
+//     nextPage(page)
+// }
+// function nextPage(page) {
+//     xhr.open('GET', 'https://reqres.in/api/users?page='+page,true);
+//     xhr.send();
+// }
+// xhr.send();
+// function checkStatus() {
+//     xhr.open('GET', 'https://reqres.in/api/users/23', true);
+//     xhr.send();
+//     xhr.onload = function () {
+//         if (xhr.status = 404) {
+//             console.log('ERROR')
+//         }
+//     };
+// }
+
+
+// simple Ajax 'Post' by jquery
+// $.ajax({
+//     url: "https://reqres.in/api/users",
+//     type: "POST",
+//     data: {
+//         name: "paul rudd",
+//         movies: ["I Love You Man", "Role Models"]
+//     },
+//     success: function(response){
+//         console.log(response);
+//     }
+// });
+
+// working simple POST
+// var http = new XMLHttpRequest();
+// var url = 'https://reqres.in/api/users';
+// var params = 'orem=ipsum&name=binny';
+// http.open('POST', url, true);
+//
+// //Send the proper header information along with the request
+// http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//
+// http.onreadystatechange = function() {
+//         alert(http.responseText);
+//     };
+// http.send();
+
+
+// var url = "https://reqres.in/api/users";
+//
+// var data = {};
+// data.firstname = "John";
+// data.lastname  = "Snow";
+// var json = JSON.stringify(data);
+//
+// var xhr = new XMLHttpRequest();
+// xhr.open("POST", url, true);
+// xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+// xhr.onload = function () {
+//     var users = JSON.parse(xhr.responseText);
+//     if (xhr.readyState == 4 && xhr.status == "201") {
+//         console.table(users);
+//     } else {
+//         console.error(users);
+//     }
+// };
+// xhr.send(json);
+
+
+// My full pagination with API and GET method -  almost done
+// var xhr = new XMLHttpRequest();
+// var pagination = document.getElementById('current-page');
+// var page = 1;
+// xhr.open('GET', 'https://reqres.in/api/users?page='+page,true);
+// xhr.onload = function () {
+//     var response = JSON.parse(xhr.response);
+//     console.log(xhr.response);
+//     var user = response.data;
+//     $('.userContainer').empty();
+//     for (var i = 0; i < response.data.length; i++) {
+//         $('.userContainer').append('<div class="single-user">' + '<p>' + user[i].id + '</p>' + user[i].first_name + '<p>' + user[i].last_name + '</p>' + '<img src="' + user[i].avatar + '">' + '</div>');
+//     }
+//     if (page === 1) {
+//         $('#previose').hide();
+//         // $('#current-page').append('<a id="pages1">'+ response.page +'</a>'+' '+'<a id="last-page">'+response.total_pages+'</a>')
+//         // for(var m =0;m<response.total_pages;m++){
+//         //     $('#current-page').append('<a id="pages">'+ response.page +'</a>');
+//
+//         // $('#current-page').append('<a id="pages">'+ response.page +'</a>'+' '+'<a>'+response.total_pages+'</a>')
+//     } else {
+//         $('#previose').show();
+//         console.log(response.page);
+//         // $('#current-page').append('<a id="pages">'+ response.page +'</a>')
+//     }
+//     if (page >= response.total_pages) {
+//         $('#next').hide();
+//     } else {
+//         $('#next').show()
+//     }
+//     pagination.innerHTML = response.page + '...' + response.total_pages
+// };
+//
+// function withNextPage() {
+//     page++;
+//     nextPage(page)
+//
+// }
+// function previosePage() {
+//     page = page -1;
+//     nextPage(page)
+// }
+// function nextPage(page) {
+//     xhr.open('GET', 'https://reqres.in/api/users?page='+page,true);
+//     xhr.send();
+// }
+// xhr.send();
+// function checkStatus(page) {
+//     xhr.open('GET', 'https://reqres.in/api/users?page='+page,true);
+//     xhr.send();
+//     xhr.onload = function () {
+//         if (xhr.status = 404) {
+//             console.log('ERROR')
+//         }
+//     };
+// }
+
+
+// tasks on OOP from http://theory.phphtml.net
+// simple class  - done
+class Worker{
+    constructor(name,surname,rate,days){
+        this._name = name;
+        this._surname = surname;
+        this._rate = rate;
+        this._days = days
+    }
+    get getName(){
+        return this._name;
+    }
+    get getSurname(){
+        return this._surname
+    }
+    getFullName() {
+        return this._name + ' ' + this._surname;
+    }
+    get getRate (){
+        return this._rate +'$' +' '+ 'per day';
+    }
+    get getDays (){
+        return this._days + ' '+ "days"
+    }
+    set lessRate (newRate){
+        this._rate = newRate;
+    }
+    set lessDays (newDays){
+        this._days = newDays
+    }
+    Salary(){
+     return this._rate*this._days;
     }
 }
-function getData() {
-    var emptyStringToShowUserInfo = '';
-    var UserInforShow = document.getElementById('div2');
-    var data = localStorage.getItem('userdata');
-    var collectDataFromLocalStorage = JSON.parse(data);
-    emptyStringToShowUserInfo = collectDataFromLocalStorage.Username +'<br>'+ collectDataFromLocalStorage.Lastname +'<br>'+ collectDataFromLocalStorage.UserEmail+'<br>'+collectDataFromLocalStorage.UserPassword;
-    UserInforShow.innerHTML = emptyStringToShowUserInfo;
-}
-function LoginUser() {
-    var loginUseremail = document.getElementById('Loginemail').value;
-    var loginUserPassword = document.getElementById('Loginpassword').value;
-    var placeForError = document.getElementById('place-for-error-onlogin');
-    placeForError.style.color = 'red';
-    var LoginParseData = localStorage.getItem('userdata');
-    var parseJsonOnLoginPage = JSON.parse(LoginParseData);
-    if(loginUseremail === parseJsonOnLoginPage.UserEmail && loginUserPassword === parseJsonOnLoginPage.UserPassword){
-        window.open('UserProfile.html',"_self")
-    }else{
-       placeForError.innerHTML = 'Email or password is wrong';
+var myNewUser = new Worker('Ihor','Petryshyn',300,26);
+myNewUser.lessRate = 200;
+myNewUser.lessDays = 20;
+console.log(myNewUser._surname);
+console.log(myNewUser.getName);
+console.log(myNewUser.getRate);
+console.log(myNewUser.getDays);
+console.log(myNewUser.Salary() + ' '+'dolars per month');
+
+
+// next class has to extend class above;
+
+
+class Student extends Worker {
+    constructor(name,surname,year){
+        super(name);
+        this._surname = surname;
+        this._year = year;
+    }
+    getCourse(){
+        return 2018-this._year;
     }
 }
+var newStudent = new Student('Andriy','Vovk',2016);
+console.log(newStudent._name);
+console.log(newStudent._surname);
+console.log(newStudent.getCourse());
+console.log(newStudent.getFullName());
+
+// tasks on OOP from http://theory.phphtml.net - 4
+// simple class  - done
+// class reverseString{
+//     constructor(someString){
+//         this._someString = someString
+//     }
+//     reverseMethod(){
+//         var splite = this._someString.split('');
+//         var reverseString = splite.reverse();
+//         var joingString = reverseString.join('');
+//         return joingString;
+//     }
+//     ucFirst(){
+//        var toUppercase = this._someString;
+//        return toUppercase[0].toUpperCase() + toUppercase.slice(1)
+//     }
+//     ucWords(){
+//         var toUppercaseEach = this._someString.split(' ');
+//         for(var i = 0, x = toUppercaseEach.length; i < x; i++){
+//             toUppercaseEach[i] = toUppercaseEach[i][0].toUpperCase() + toUppercaseEach[i].substr(1)
+//         }
+//         return toUppercaseEach.join(' ')
+//     }
+// }
+// var newString = new reverseString('hey you bitch');
+// console.log(newString.reverseMethod());
+// console.log(newString.ucFirst());
+// console.log(newString.ucWords());
+
+
+// tasks on OOP from http://theory.phphtml.net - 5
+// class Validator{
+//     isEmail(someString){
+//         var gottenString = someString;
+//         var regExpression =   /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//         if(!regExpression.test(gottenString)){
+//             return false
+//         }else{
+//             return true
+//         }
+//     }
+// }
+// var User1 = new Validator();
+// User1.isEmail('vovk6230@ukr.net');
